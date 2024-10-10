@@ -1,6 +1,6 @@
 import Foundation
 
-// MARK: My solution
+// MARK: My solution (seems like this is the best one!)
 func isAnagram(_ s: String, _ t: String) -> Bool {
     
     // we'll probably want to do something similar to containsDuplicate. We can't use a set though, since we can have repeating elements. Perhaps a hashmap where we can store multiple values?
