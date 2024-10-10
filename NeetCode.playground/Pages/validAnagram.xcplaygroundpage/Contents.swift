@@ -46,7 +46,7 @@ isAnagram("rat", "cat")
 
 // man this is bad LOL 2ms runtime
 
-// MARK: Recommend solution
+// MARK: One solution (robust against all character types)
 class ValidAnagram {
     func isAnagram(_ s: String, _ t: String) -> Bool {
         
@@ -113,3 +113,32 @@ class ValidAnagram {
 
 ValidAnagram().isAnagram("anagram", "nagaram")
 ValidAnagram().isAnagram("rat", "cat")
+
+
+// MARK: Best solution
+func isAnagram2(_ s: String, _ t: String) -> Bool {
+    
+    // simple check
+    guard s.count == t.count else { return false }
+    
+    var dict = [Character: Int]()
+    
+    // simple enough
+    for char in s {
+        dict[char, default: 0] += 1
+    }
+    
+    // oooh this is smart. We're effectively returning the state of the dictionary to what it once was.
+    for char in t {
+        // the `let count` checks for letters that don't exist in s that exist in t
+        // and if they exist, they should be greater than 0
+        if let count = dict[char], count > 0 {
+            // we decrement the value (essentially dict[char] = dict[char] - 1 but with nil checking
+            dict[char] = count - 1
+        } else {
+            return false
+        }
+    }
+    
+    return true
+}
