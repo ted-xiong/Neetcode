@@ -1,7 +1,5 @@
-//: [Previous](@previous)
+// MARK: My solution
+func isAnagram(_ s: String, _ t: String) -> Bool {
+    
+}
 
-import Foundation
-
-var greeting = "Hello, playground"
-
-//: [Next](@next)
