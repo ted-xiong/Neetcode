@@ -1,4 +1,9 @@
-
 import Foundation
 
-var greeting = "Hello, playground"
+
+// MARK: My solution
+func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+    
+    // thought process
+    
+}
