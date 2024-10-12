@@ -1,7 +1,5 @@
 // given an array of strings, group the anagrams together. You can return the answer in any order.
 
-
-
 // MARK: My solution
 func groupAnagrams(_ strs: [String]) -> [[String]] {
     // I think a good way to think about this is to go through the array of strings
@@ -37,8 +35,6 @@ func groupAnagrams(_ strs: [String]) -> [[String]] {
 groupAnagrams(["eat", "tea","tan","ate","nat","bat"])
 groupAnagrams([""])
 groupAnagrams(["a"])
-
-
 
 // MARK: Their solution
 
