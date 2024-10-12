@@ -33,5 +33,21 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
 
 // This is for me to try again on Day 2 because I slacked on the last one.
 func twoSumRetry(_ nums: [Int], _ target: Int) -> [Int] {
+    var dict: [Int:Int] = [:]
     
+    // we go through every number and subtract from the target using that number.
+    for (index, number) in nums.enumerated() {
+        let diff = target - number
+        
+        if let newIndex = dict[number] {
+            print(newIndex)
+            return [index, newIndex]
+        } else {
+            dict[diff] = index
+        }
+    }
+    
+    return []
 }
+
+twoSumRetry([2,7,11,15], 9)
