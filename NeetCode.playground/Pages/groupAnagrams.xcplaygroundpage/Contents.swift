@@ -22,7 +22,7 @@ func groupAnagrams(_ strs: [String]) -> [[String]] {
             result[index].append(string)
         } else {
             dict[sortedStringValue] = counter
-            result.append([])
+            result.append([]) // not a huge fan of this. We're getting into discrete territory here in the way we think about these problems.
             result[counter].append(string)
             counter += 1
         }
@@ -37,7 +37,6 @@ groupAnagrams([""])
 groupAnagrams(["a"])
 
 // MARK: Their solution
-
 func groupAnagramsSolution(_ strs: [String]) -> [[String]] {
     // instead of creating a dictionary of [word:index], they just did a [String:String] dictionary. Interesting...
     var dict = [String: [String]]()
