@@ -45,7 +45,7 @@ func groupAnagramsSolution(_ strs: [String]) -> [[String]] {
     // looping through the strings once like I did
     for str in strs {
         
-        // they sort it just like I did
+        // they sort it just like I did. But to remove the error, they type-cast it here.
         let sortedStr = String(str.sorted())
         
         // ahhh ok this makes sense. They append it to the value.
