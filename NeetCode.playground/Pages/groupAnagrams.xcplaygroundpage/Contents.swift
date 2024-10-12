@@ -2,11 +2,11 @@
 
 // MARK: My solution
 func groupAnagrams(_ strs: [String]) -> [[String]] {
-    // I think a good way to think about this is to go through the array of strings
     if strs.isEmpty {
         return [[""]]
     }
     
+    // I think a good way to think about this is to go through the array of strings once and once only
     var result = [[String]]()
     
     var dict: [Int:Int] = [:]
@@ -14,7 +14,7 @@ func groupAnagrams(_ strs: [String]) -> [[String]] {
     
     for string in strs {
         // at the very end, if the sorted string doesn't exist in the dictionary as a key,
-        // we add it to the dictionary -> [Set<Character>:counter] and increment the counter
+        // we add it to the dictionary -> [hashvalue:counter] and increment the counter
         
         let sortedStringValue = string.sorted().hashValue
         
@@ -41,7 +41,6 @@ groupAnagrams(["a"])
 func groupAnagramsSolution(_ strs: [String]) -> [[String]] {
     // instead of creating a dictionary of [word:index], they just did a [String:String] dictionary. Interesting...
     var dict = [String: [String]]()
-
     
     // looping through the strings once like I did
     for str in strs {
