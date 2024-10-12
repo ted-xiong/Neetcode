@@ -29,3 +29,9 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
 
 
 // This one I had to cheat a little. Felt really tired. Be sure to lock this one in...
+
+
+// This is for me to try again on Day 2 because I slacked on the last one.
+func twoSumRetry(_ nums: [Int], _ target: Int) -> [Int] {
+    
+}
