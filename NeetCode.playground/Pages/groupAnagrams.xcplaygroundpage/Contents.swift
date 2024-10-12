@@ -40,4 +40,31 @@ groupAnagrams(["a"])
 
 
 
+// MARK: Their solution
+
+func groupAnagramsSolution(_ strs: [String]) -> [[String]] {
+    // instead of creating a dictionary of [word:index], they just did a [String:String] dictionary. Interesting...
+    var dict = [String: [String]]()
+
+    
+    // looping through the strings once like I did
+    for str in strs {
+        
+        // they sort it just like I did
+        let sortedStr = String(str.sorted())
+        
+        // ahhh ok this makes sense. They append it to the value.
+        // I was not aware of this API... cool stuff!
+        dict[sortedStr, default: []].append(str)
+    }
+
+    // dict.values actually is satisfactory, but we need to type-cast it for the sake of the return type.
+    print(dict.values)
+    return Array(dict.values)
+}
+
+groupAnagramsSolution(["eat", "tea","tan","ate","nat","bat"])
+groupAnagramsSolution([""])
+groupAnagramsSolution(["a"])
+
 
