@@ -47,3 +47,19 @@ func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
 
 topKFrequent([1,1,1,2,2,3], 2)
 
+
+// MARK: Their solution
+
+func topKFrequentSolution(_ nums: [Int], _ k: Int) -> [Int] {
+    // initialized a dictionary yep
+    var frequencyDict = [Int: Int]()
+    for num in nums {
+        frequencyDict[num, default: 0] += 1
+    }
+    let sortedDict = frequencyDict.sorted { $0.value > $1.value }
+    var result = [Int]()
+    for i in 0 ..< k {
+        result.append(sortedDict[i].key)
+    }
+    return result
+}
