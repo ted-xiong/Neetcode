@@ -1,7 +1,7 @@
-//: [Previous](@previous)
+// Given an integer array nums and an integer k, return the k most frequent elements within the array.
 
-import Foundation
 
-var greeting = "Hello, playground"
-
-//: [Next](@next)
+// MARK: My solution
+func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
+    return []
+}
