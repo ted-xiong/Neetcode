@@ -51,15 +51,31 @@ topKFrequent([1,1,1,2,2,3], 2)
 // MARK: Their solution
 
 func topKFrequentSolution(_ nums: [Int], _ k: Int) -> [Int] {
+    
     // initialized a dictionary yep
     var frequencyDict = [Int: Int]()
+    
+    // ok this syntax is much simplier...
     for num in nums {
+        
+        // I need to use default more. This is literally so clean.
+        // Unless I'm trying to do something WITH the value afterwards,
+        // just stick with this
         frequencyDict[num, default: 0] += 1
     }
+    
+    // sorted syntax again, from ChatGPT. I mean, just at a glance it makes sense.
+    // "I want the current entry to be greater than the next one"
     let sortedDict = frequencyDict.sorted { $0.value > $1.value }
+    
+    // got our result
     var result = [Int]()
+    
+    // and our for-loop
     for i in 0 ..< k {
         result.append(sortedDict[i].key)
     }
+    
+    // and voila...
     return result
 }
