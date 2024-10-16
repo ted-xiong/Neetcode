@@ -4,12 +4,26 @@ import Foundation
 
 // MARK: My solution
 
-class Codec {
-    func encode(_ strs: [String]) -> String {
-        
+// Thought process: pretty self explanatory...?
+func encode(_ strs: [String]) -> String {
+    var string = ""
+    
+    for str in strs {
+        string.append(str + "/")
     }
-
-    func decode(_ s: String) -> [String] {
-
-    }
+    
+    return string
 }
+
+func decode(_ s: String) -> [String] {
+    var ans: [String] = []
+    
+    s.split(separator: "/").map { substring in
+        ans.append(String(substring))
+    }
+    
+    return ans.dropLast()
+}
+
+
+
