@@ -28,13 +28,14 @@ func decode(_ s: String) -> [String] {
 // MARK: What the hell is this solution???
 
 func encodeSolution(_ strs: [String]) -> String {
-        if strs.isEmpty { return "#" }
-        var counts = [String]()
-        for str in strs {
-            counts.append("\(str.count)")
-        }
-        return counts.joined(separator: ",") + "#" + strs.joined()
+    
+    if strs.isEmpty { return "#" }
+    var counts = [String]()
+    for str in strs {
+        counts.append("\(str.count)")
     }
+    return counts.joined(separator: ",") + "#" + strs.joined()
+}
 
 func decodeSolution(_ s: String) -> [String] {
     if s == "#" { return [] }
@@ -52,6 +53,6 @@ func decodeSolution(_ s: String) -> [String] {
         sIndex = s.index(after: endIndex)
     }
     return decodedStrings
-
+    
 }
 
