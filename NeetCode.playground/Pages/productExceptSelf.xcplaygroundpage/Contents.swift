@@ -1,21 +1,32 @@
-// MARK: My solution
+// MARK: Their solution (too tired today)
 
 // We want to find all the possible products of the numbers in the array excluding the number that the iteration is currently on
 // For example: [1, 2, 3, 4] should return [24, 12, 8, 6]
+
 func productExceptSelf(_ nums: [Int]) -> [Int] {
-    // It sounds like it's possible to solve this in constant time, which means that a for-loop isn't even neccessary.
-    
     // The obvious method is to use division, but that's not allowed.
     
-    var count = nums.count-1
-    
-    var start = 0
-    
-    for index in 0..<nums.count {
-        
+    // initialization of three different arrays
+    var prefix = Array(repeating: 1, count: nums.count)
+    var suffix = Array(repeating: 1, count: nums.count)
+    var result = Array(repeating: 0, count: nums.count)
+
+    // starting with the second entry in the array, stores the products of the proceeding entries
+    // into an array
+    for i in 1 ..< nums.count {
+        prefix[i] = prefix[i - 1] * nums[i - 1]
     }
-    
-    
+
+    // starting with the last entry in the array, stores the products of the succeeding entries
+    // into an array
+    for i in (0 ..< nums.count - 1).reversed() {
+        suffix[i] = suffix[i + 1] * nums[i + 1]
+    }
+
+    // multiplies the two together
+    for i in 0 ..< result.count {
+        result[i] = prefix[i] * suffix[i]
+    }
     
     return []
 }
