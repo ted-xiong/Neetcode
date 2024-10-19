@@ -15,13 +15,20 @@ func productExceptSelf(_ nums: [Int]) -> [Int] {
     // into an array
     for i in 1 ..< nums.count {
         prefix[i] = prefix[i - 1] * nums[i - 1]
+        print("Prefix for \(i): ",prefix[i])
     }
+    
+    print("Prefix after loop: ", prefix)
 
     // starting with the last entry in the array, stores the products of the succeeding entries
     // into an array
     for i in (0 ..< nums.count - 1).reversed() {
         suffix[i] = suffix[i + 1] * nums[i + 1]
+        print("Suffix for \(i): ", suffix[i])
+
     }
+    
+    print("Suffix after loop: ", suffix)
 
     // multiplies the two together
     for i in 0 ..< result.count {
@@ -30,3 +37,6 @@ func productExceptSelf(_ nums: [Int]) -> [Int] {
     
     return []
 }
+
+productExceptSelf([1,2,3,4])
+
